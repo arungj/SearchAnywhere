@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ARGSearchViewController.swift
 //  SearchPlaces
 //
 //  Created by Arun George on 3/3/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ARGSearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

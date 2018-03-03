@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		11EA4664204AFA18009F84B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA4663204AFA18009F84B3 /* AppDelegate.swift */; };
-		11EA4666204AFA18009F84B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA4665204AFA18009F84B3 /* ViewController.swift */; };
+		11EA4666204AFA18009F84B3 /* ARGSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA4665204AFA18009F84B3 /* ARGSearchViewController.swift */; };
 		11EA4669204AFA18009F84B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11EA4667204AFA18009F84B3 /* Main.storyboard */; };
 		11EA466C204AFA18009F84B3 /* SearchPlaces.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11EA466A204AFA18009F84B3 /* SearchPlaces.xcdatamodeld */; };
 		11EA466E204AFA18009F84B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11EA466D204AFA18009F84B3 /* Assets.xcassets */; };
@@ -29,7 +29,7 @@
 /* Begin PBXFileReference section */
 		11EA4660204AFA18009F84B3 /* SearchPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11EA4663204AFA18009F84B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		11EA4665204AFA18009F84B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		11EA4665204AFA18009F84B3 /* ARGSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGSearchViewController.swift; sourceTree = "<group>"; };
 		11EA4668204AFA18009F84B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11EA466B204AFA18009F84B3 /* SearchPlaces.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SearchPlaces.xcdatamodel; sourceTree = "<group>"; };
 		11EA466D204AFA18009F84B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,8 +79,10 @@
 		11EA4662204AFA18009F84B3 /* SearchPlaces */ = {
 			isa = PBXGroup;
 			children = (
+				11EA4688204AFBD3009F84B3 /* Controller */,
+				11EA4687204AFBCC009F84B3 /* View */,
+				11EA4686204AFBC4009F84B3 /* Model */,
 				11EA4663204AFA18009F84B3 /* AppDelegate.swift */,
-				11EA4665204AFA18009F84B3 /* ViewController.swift */,
 				11EA4667204AFA18009F84B3 /* Main.storyboard */,
 				11EA466D204AFA18009F84B3 /* Assets.xcassets */,
 				11EA466F204AFA18009F84B3 /* LaunchScreen.storyboard */,
@@ -97,6 +99,28 @@
 				11EA467D204AFA18009F84B3 /* Info.plist */,
 			);
 			path = SearchPlacesTests;
+			sourceTree = "<group>";
+		};
+		11EA4686204AFBC4009F84B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		11EA4687204AFBCC009F84B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		11EA4688204AFBD3009F84B3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				11EA4665204AFA18009F84B3 /* ARGSearchViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +167,7 @@
 		11EA4658204AFA18009F84B3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = ARG;
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = ARG;
@@ -202,7 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11EA4666204AFA18009F84B3 /* ViewController.swift in Sources */,
+				11EA4666204AFA18009F84B3 /* ARGSearchViewController.swift in Sources */,
 				11EA4664204AFA18009F84B3 /* AppDelegate.swift in Sources */,
 				11EA466C204AFA18009F84B3 /* SearchPlaces.xcdatamodeld in Sources */,
 			);
