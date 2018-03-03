@@ -16,5 +16,6 @@ class ARGSearchViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         navigationItem.title = "Search Places"
+        tableView.register(ARGLabelCell.self, forCellReuseIdentifier: ARGLabelCell.reuseIdentifier)
     }
 }
