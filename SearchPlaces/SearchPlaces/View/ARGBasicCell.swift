@@ -9,15 +9,16 @@
 import UIKit
 
 class ARGBasicCell: UITableViewCell {
-    static let reuseIdentifier = "placeCell"
+    static let reuseIdentifier = "basicCell"
     // Add a single label to the cell for displaying the text.
-    let displayText = UILabel()
+    private let displayText = UILabel()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         // Setting properties for the label.
         displayText.numberOfLines = 2
+        displayText.font = UIFont.preferredFont(forTextStyle: .headline)
         displayText.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(displayText)
         
@@ -33,5 +34,9 @@ class ARGBasicCell: UITableViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(withTitle title: String) {
+        displayText.text = title
     }
 }

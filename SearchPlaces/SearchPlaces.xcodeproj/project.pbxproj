@@ -15,6 +15,13 @@
 		11EA4671204AFA18009F84B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11EA466F204AFA18009F84B3 /* LaunchScreen.storyboard */; };
 		11EA467C204AFA18009F84B3 /* SearchPlacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA467B204AFA18009F84B3 /* SearchPlacesTests.swift */; };
 		11EA468D204B0516009F84B3 /* ARGBasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA468C204B0516009F84B3 /* ARGBasicCell.swift */; };
+		11EA468F204B0EF0009F84B3 /* ARGSearchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA468E204B0EF0009F84B3 /* ARGSearchHandler.swift */; };
+		11EA4691204B0F11009F84B3 /* ARGServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA4690204B0F11009F84B3 /* ARGServices.swift */; };
+		11EA4693204B0F1F009F84B3 /* ARGEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA4692204B0F1F009F84B3 /* ARGEnvironment.swift */; };
+		11EA4697204B2DE7009F84B3 /* ARGSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA4696204B2DE7009F84B3 /* ARGSearchResponse.swift */; };
+		11EA469A204B3764009F84B3 /* ARGAlertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA4699204B3764009F84B3 /* ARGAlertable.swift */; };
+		11EA469C204B378E009F84B3 /* ARGActivityIndicatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA469B204B378E009F84B3 /* ARGActivityIndicatorProtocol.swift */; };
+		11EA469E204B4C3E009F84B3 /* ARGSearchResultsDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA469D204B4C3E009F84B3 /* ARGSearchResultsDatasource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +47,13 @@
 		11EA467B204AFA18009F84B3 /* SearchPlacesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlacesTests.swift; sourceTree = "<group>"; };
 		11EA467D204AFA18009F84B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11EA468C204B0516009F84B3 /* ARGBasicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGBasicCell.swift; sourceTree = "<group>"; };
+		11EA468E204B0EF0009F84B3 /* ARGSearchHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGSearchHandler.swift; sourceTree = "<group>"; };
+		11EA4690204B0F11009F84B3 /* ARGServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGServices.swift; sourceTree = "<group>"; };
+		11EA4692204B0F1F009F84B3 /* ARGEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGEnvironment.swift; sourceTree = "<group>"; };
+		11EA4696204B2DE7009F84B3 /* ARGSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGSearchResponse.swift; sourceTree = "<group>"; };
+		11EA4699204B3764009F84B3 /* ARGAlertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGAlertable.swift; sourceTree = "<group>"; };
+		11EA469B204B378E009F84B3 /* ARGActivityIndicatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGActivityIndicatorProtocol.swift; sourceTree = "<group>"; };
+		11EA469D204B4C3E009F84B3 /* ARGSearchResultsDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGSearchResultsDatasource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +98,7 @@
 				11EA4688204AFBD3009F84B3 /* Controller */,
 				11EA4687204AFBCC009F84B3 /* View */,
 				11EA4686204AFBC4009F84B3 /* Model */,
+				11EA4698204B3743009F84B3 /* Protocols */,
 				11EA4663204AFA18009F84B3 /* AppDelegate.swift */,
 				11EA4667204AFA18009F84B3 /* Main.storyboard */,
 				11EA466D204AFA18009F84B3 /* Assets.xcassets */,
@@ -106,6 +121,11 @@
 		11EA4686204AFBC4009F84B3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				11EA4692204B0F1F009F84B3 /* ARGEnvironment.swift */,
+				11EA468E204B0EF0009F84B3 /* ARGSearchHandler.swift */,
+				11EA4696204B2DE7009F84B3 /* ARGSearchResponse.swift */,
+				11EA469D204B4C3E009F84B3 /* ARGSearchResultsDatasource.swift */,
+				11EA4690204B0F11009F84B3 /* ARGServices.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -124,6 +144,15 @@
 				11EA4665204AFA18009F84B3 /* ARGSearchViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		11EA4698204B3743009F84B3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				11EA4699204B3764009F84B3 /* ARGAlertable.swift */,
+				11EA469B204B378E009F84B3 /* ARGActivityIndicatorProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,9 +277,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				11EA468D204B0516009F84B3 /* ARGBasicCell.swift in Sources */,
+				11EA469C204B378E009F84B3 /* ARGActivityIndicatorProtocol.swift in Sources */,
+				11EA4697204B2DE7009F84B3 /* ARGSearchResponse.swift in Sources */,
 				11EA4666204AFA18009F84B3 /* ARGSearchViewController.swift in Sources */,
 				11EA4664204AFA18009F84B3 /* AppDelegate.swift in Sources */,
+				11EA4691204B0F11009F84B3 /* ARGServices.swift in Sources */,
+				11EA468F204B0EF0009F84B3 /* ARGSearchHandler.swift in Sources */,
+				11EA4693204B0F1F009F84B3 /* ARGEnvironment.swift in Sources */,
 				11EA466C204AFA18009F84B3 /* SearchPlaces.xcdatamodeld in Sources */,
+				11EA469E204B4C3E009F84B3 /* ARGSearchResultsDatasource.swift in Sources */,
+				11EA469A204B3764009F84B3 /* ARGAlertable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
