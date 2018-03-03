@@ -8,10 +8,13 @@
 
 import UIKit
 
-class ARGSearchViewController: UIViewController {
+class ARGSearchViewController: UITableViewController {
 
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        navigationItem.title = "Search Places"
     }
 }
