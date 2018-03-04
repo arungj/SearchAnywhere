@@ -27,8 +27,10 @@ struct ARGSearchResultsDataSource {
     func numberOfRows(inSection section: Int) -> Int {
         if section == 0 {
             return 1
+        } else if results.count > 1 {
+           return results.count
         } else {
-            return results.count
+            return 0
         }
     }
     
@@ -56,9 +58,12 @@ struct ARGSearchResultsDataSource {
     }
     
     func isLocationAvailable(at indexPath: IndexPath) -> Bool {
-        if indexPath.section == 0 && results.count > 1 {
-            return false
+        if hasSearchResults {
+            if indexPath.section == 0 && results.count > 1 {
+                return false
+            }
+            return true
         }
-        return true
+        return false
     }
 }
