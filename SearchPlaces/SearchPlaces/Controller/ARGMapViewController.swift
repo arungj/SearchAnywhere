@@ -30,7 +30,7 @@ class ARGMapViewController: UIViewController, ARGCoreDataProtocol {
         
         var annotations = [ARGPinAnnotation]()
         var annotationToHighlight: ARGPinAnnotation?
-        datasource.locationResults.forEach { locationDetails in
+        datasource.locationResults?.forEach { locationDetails in
             let annotation = makeAnnotation(from: locationDetails)
             annotations.append(annotation)
             if datasource.isSelected(placeID: locationDetails.place_id) {
