@@ -9,10 +9,10 @@
 import Foundation
 
 struct ARGSearchResponse: Codable {
-    let results: [ARGResult]
+    let results: [ARGLocationDetails]
 }
 
-struct ARGResult: Codable {
+struct ARGLocationDetails: Codable {
     let formatted_address: String
     let geometry: ARGGeometry
     let place_id: String
@@ -23,6 +23,6 @@ struct ARGGeometry: Codable {
 }
 
 struct ARGLocation: Codable {
-    let lat: Float
-    let lng: Float
+    let lat: Double
+    let lng: Double
 }

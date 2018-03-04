@@ -13,7 +13,7 @@ class ARGSearchViewController: UITableViewController, ARGAlertable, ARGActivityI
     @IBOutlet weak var searchBar: UISearchBar!
     weak var indicatorView: UIView?
     var searchHandler = ARGSearchHandler()
-    var datasource = ARGSearchResultsDatasource()
+    var datasource = ARGSearchResultsDataSource()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -93,6 +93,10 @@ extension ARGSearchViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         if datasource.hasSearchResults,
             let mapViewController = storyboard?.instantiateViewController(withIdentifier: ARGMapViewController.storyboardIdentifier) as? ARGMapViewController {
+            mapViewController.datasource.locationResults = datasource.results
+            if datasource.isLocationAvailable(at: indexPath) {
+                mapViewController.datasource.selectedLocation = datasource.results[indexPath.row]
+            }
             navigationController?.pushViewController(mapViewController, animated: true)
         }
     }

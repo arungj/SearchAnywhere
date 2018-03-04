@@ -16,7 +16,7 @@ class ARGSearchHandler: NSObject, ARGServices {
         guard let searchText = text,
             searchText.count > 0 else { return false }
         
-        // Cancel the search task if a new search is fired while the search is in progress.
+        // Cancel the search task if a new search is fired while a search is in progress.
         dataTask?.cancel()
         let urlRequest = URLRequest(url: environment.serviceURL(forSearchText: searchText))
         dataTask = send(request: urlRequest) { data, error in

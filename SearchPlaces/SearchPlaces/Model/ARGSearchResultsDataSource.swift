@@ -1,5 +1,5 @@
 //
-//  ARGSearchResultsDatasource.swift
+//  ARGSearchResultsDataSource.swift
 //  SearchPlaces
 //
 //  Created by Arun George on 3/3/18.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct ARGSearchResultsDatasource {
+struct ARGSearchResultsDataSource {
     var searchText = ""
     let displayAllOnMap = "Display All on Map"
     let noResults = "No Results"
-    var results = [ARGResult]()
+    var results = [ARGLocationDetails]()
     
     var numberOfSections: Int {
         if searchText.count == 0 {
@@ -53,5 +53,12 @@ struct ARGSearchResultsDatasource {
     
     var hasSearchResults: Bool {
         return results.count > 0
+    }
+    
+    func isLocationAvailable(at indexPath: IndexPath) -> Bool {
+        if indexPath.section == 0 && results.count > 1 {
+            return false
+        }
+        return true
     }
 }

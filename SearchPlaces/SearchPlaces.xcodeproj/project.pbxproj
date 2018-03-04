@@ -21,8 +21,10 @@
 		11EA4697204B2DE7009F84B3 /* ARGSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA4696204B2DE7009F84B3 /* ARGSearchResponse.swift */; };
 		11EA469A204B3764009F84B3 /* ARGAlertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA4699204B3764009F84B3 /* ARGAlertable.swift */; };
 		11EA469C204B378E009F84B3 /* ARGActivityIndicatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA469B204B378E009F84B3 /* ARGActivityIndicatorProtocol.swift */; };
-		11EA469E204B4C3E009F84B3 /* ARGSearchResultsDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA469D204B4C3E009F84B3 /* ARGSearchResultsDatasource.swift */; };
+		11EA469E204B4C3E009F84B3 /* ARGSearchResultsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA469D204B4C3E009F84B3 /* ARGSearchResultsDataSource.swift */; };
 		11F9F5B5204BA72700D27635 /* ARGMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F9F5B4204BA72700D27635 /* ARGMapViewController.swift */; };
+		11F9F5B7204BB44000D27635 /* ARGPinAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F9F5B6204BB44000D27635 /* ARGPinAnnotation.swift */; };
+		11F9F5BB204BCCD300D27635 /* ARGLocationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F9F5BA204BCCD300D27635 /* ARGLocationsDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +56,10 @@
 		11EA4696204B2DE7009F84B3 /* ARGSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGSearchResponse.swift; sourceTree = "<group>"; };
 		11EA4699204B3764009F84B3 /* ARGAlertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGAlertable.swift; sourceTree = "<group>"; };
 		11EA469B204B378E009F84B3 /* ARGActivityIndicatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGActivityIndicatorProtocol.swift; sourceTree = "<group>"; };
-		11EA469D204B4C3E009F84B3 /* ARGSearchResultsDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGSearchResultsDatasource.swift; sourceTree = "<group>"; };
+		11EA469D204B4C3E009F84B3 /* ARGSearchResultsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGSearchResultsDataSource.swift; sourceTree = "<group>"; };
 		11F9F5B4204BA72700D27635 /* ARGMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGMapViewController.swift; sourceTree = "<group>"; };
+		11F9F5B6204BB44000D27635 /* ARGPinAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGPinAnnotation.swift; sourceTree = "<group>"; };
+		11F9F5BA204BCCD300D27635 /* ARGLocationsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGLocationsDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +130,8 @@
 				11EA4692204B0F1F009F84B3 /* ARGEnvironment.swift */,
 				11EA468E204B0EF0009F84B3 /* ARGSearchHandler.swift */,
 				11EA4696204B2DE7009F84B3 /* ARGSearchResponse.swift */,
-				11EA469D204B4C3E009F84B3 /* ARGSearchResultsDatasource.swift */,
+				11EA469D204B4C3E009F84B3 /* ARGSearchResultsDataSource.swift */,
+				11F9F5BA204BCCD300D27635 /* ARGLocationsDataSource.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				11EA468C204B0516009F84B3 /* ARGBasicCell.swift */,
+				11F9F5B6204BB44000D27635 /* ARGPinAnnotation.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -288,9 +294,11 @@
 				11EA468F204B0EF0009F84B3 /* ARGSearchHandler.swift in Sources */,
 				11EA4693204B0F1F009F84B3 /* ARGEnvironment.swift in Sources */,
 				11F9F5B5204BA72700D27635 /* ARGMapViewController.swift in Sources */,
+				11F9F5B7204BB44000D27635 /* ARGPinAnnotation.swift in Sources */,
 				11EA466C204AFA18009F84B3 /* SearchPlaces.xcdatamodeld in Sources */,
-				11EA469E204B4C3E009F84B3 /* ARGSearchResultsDatasource.swift in Sources */,
+				11EA469E204B4C3E009F84B3 /* ARGSearchResultsDataSource.swift in Sources */,
 				11EA469A204B3764009F84B3 /* ARGAlertable.swift in Sources */,
+				11F9F5BB204BCCD300D27635 /* ARGLocationsDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
