@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		116BC1ED204C92F300EF6412 /* ARGLocationsDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116BC1EC204C92F300EF6412 /* ARGLocationsDataSourceTests.swift */; };
+		116BC1EF204CA16600EF6412 /* ARGEnvironmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116BC1EE204CA16600EF6412 /* ARGEnvironmentTests.swift */; };
+		116BC1F1204CA2E900EF6412 /* ARGSearchHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116BC1F0204CA2E900EF6412 /* ARGSearchHandlerTests.swift */; };
 		11B0575E204C819C00237CE0 /* ARGSearchResultsDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B0575D204C819C00237CE0 /* ARGSearchResultsDataSourceTests.swift */; };
 		11EA4664204AFA18009F84B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA4663204AFA18009F84B3 /* AppDelegate.swift */; };
 		11EA4666204AFA18009F84B3 /* ARGSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA4665204AFA18009F84B3 /* ARGSearchViewController.swift */; };
@@ -45,6 +47,8 @@
 
 /* Begin PBXFileReference section */
 		116BC1EC204C92F300EF6412 /* ARGLocationsDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGLocationsDataSourceTests.swift; sourceTree = "<group>"; };
+		116BC1EE204CA16600EF6412 /* ARGEnvironmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGEnvironmentTests.swift; sourceTree = "<group>"; };
+		116BC1F0204CA2E900EF6412 /* ARGSearchHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGSearchHandlerTests.swift; sourceTree = "<group>"; };
 		11B0575D204C819C00237CE0 /* ARGSearchResultsDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGSearchResultsDataSourceTests.swift; sourceTree = "<group>"; };
 		11EA4660204AFA18009F84B3 /* SearchPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11EA4663204AFA18009F84B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,7 +134,9 @@
 		11EA467A204AFA18009F84B3 /* SearchPlacesTests */ = {
 			isa = PBXGroup;
 			children = (
+				116BC1EE204CA16600EF6412 /* ARGEnvironmentTests.swift */,
 				116BC1EC204C92F300EF6412 /* ARGLocationsDataSourceTests.swift */,
+				116BC1F0204CA2E900EF6412 /* ARGSearchHandlerTests.swift */,
 				11B0575D204C819C00237CE0 /* ARGSearchResultsDataSourceTests.swift */,
 				11EA467B204AFA18009F84B3 /* SearchPlacesTests.swift */,
 				11EA467D204AFA18009F84B3 /* Info.plist */,
@@ -328,8 +334,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				116BC1F1204CA2E900EF6412 /* ARGSearchHandlerTests.swift in Sources */,
 				11B0575E204C819C00237CE0 /* ARGSearchResultsDataSourceTests.swift in Sources */,
 				11EA467C204AFA18009F84B3 /* SearchPlacesTests.swift in Sources */,
+				116BC1EF204CA16600EF6412 /* ARGEnvironmentTests.swift in Sources */,
 				116BC1ED204C92F300EF6412 /* ARGLocationsDataSourceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
