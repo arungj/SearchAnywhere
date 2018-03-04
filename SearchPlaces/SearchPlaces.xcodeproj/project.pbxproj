@@ -25,6 +25,10 @@
 		11F9F5B5204BA72700D27635 /* ARGMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F9F5B4204BA72700D27635 /* ARGMapViewController.swift */; };
 		11F9F5B7204BB44000D27635 /* ARGPinAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F9F5B6204BB44000D27635 /* ARGPinAnnotation.swift */; };
 		11F9F5BB204BCCD300D27635 /* ARGLocationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F9F5BA204BCCD300D27635 /* ARGLocationsDataSource.swift */; };
+		11F9F5BD204C4ADB00D27635 /* ARGCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F9F5BC204C4ADB00D27635 /* ARGCoreDataManager.swift */; };
+		11F9F5BF204C543900D27635 /* ARGCoreDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F9F5BE204C543900D27635 /* ARGCoreDataProtocol.swift */; };
+		11F9F5E7204C5DC200D27635 /* Place+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F9F5E5204C5DC200D27635 /* Place+CoreDataClass.swift */; };
+		11F9F5E8204C5DC200D27635 /* Place+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F9F5E6204C5DC200D27635 /* Place+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +64,10 @@
 		11F9F5B4204BA72700D27635 /* ARGMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGMapViewController.swift; sourceTree = "<group>"; };
 		11F9F5B6204BB44000D27635 /* ARGPinAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGPinAnnotation.swift; sourceTree = "<group>"; };
 		11F9F5BA204BCCD300D27635 /* ARGLocationsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGLocationsDataSource.swift; sourceTree = "<group>"; };
+		11F9F5BC204C4ADB00D27635 /* ARGCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGCoreDataManager.swift; sourceTree = "<group>"; };
+		11F9F5BE204C543900D27635 /* ARGCoreDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGCoreDataProtocol.swift; sourceTree = "<group>"; };
+		11F9F5E5204C5DC200D27635 /* Place+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Place+CoreDataClass.swift"; sourceTree = "<group>"; };
+		11F9F5E6204C5DC200D27635 /* Place+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Place+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,11 +135,14 @@
 		11EA4686204AFBC4009F84B3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				11F9F5BC204C4ADB00D27635 /* ARGCoreDataManager.swift */,
 				11EA4692204B0F1F009F84B3 /* ARGEnvironment.swift */,
+				11F9F5BA204BCCD300D27635 /* ARGLocationsDataSource.swift */,
 				11EA468E204B0EF0009F84B3 /* ARGSearchHandler.swift */,
 				11EA4696204B2DE7009F84B3 /* ARGSearchResponse.swift */,
 				11EA469D204B4C3E009F84B3 /* ARGSearchResultsDataSource.swift */,
-				11F9F5BA204BCCD300D27635 /* ARGLocationsDataSource.swift */,
+				11F9F5E5204C5DC200D27635 /* Place+CoreDataClass.swift */,
+				11F9F5E6204C5DC200D27635 /* Place+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -148,8 +159,8 @@
 		11EA4688204AFBD3009F84B3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				11EA4665204AFA18009F84B3 /* ARGSearchViewController.swift */,
 				11F9F5B4204BA72700D27635 /* ARGMapViewController.swift */,
+				11EA4665204AFA18009F84B3 /* ARGSearchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -157,9 +168,10 @@
 		11EA4698204B3743009F84B3 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				11EA4690204B0F11009F84B3 /* ARGServices.swift */,
-				11EA4699204B3764009F84B3 /* ARGAlertable.swift */,
 				11EA469B204B378E009F84B3 /* ARGActivityIndicatorProtocol.swift */,
+				11EA4699204B3764009F84B3 /* ARGAlertable.swift */,
+				11F9F5BE204C543900D27635 /* ARGCoreDataProtocol.swift */,
+				11EA4690204B0F11009F84B3 /* ARGServices.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -288,13 +300,17 @@
 				11EA468D204B0516009F84B3 /* ARGBasicCell.swift in Sources */,
 				11EA469C204B378E009F84B3 /* ARGActivityIndicatorProtocol.swift in Sources */,
 				11EA4697204B2DE7009F84B3 /* ARGSearchResponse.swift in Sources */,
+				11F9F5BF204C543900D27635 /* ARGCoreDataProtocol.swift in Sources */,
 				11EA4666204AFA18009F84B3 /* ARGSearchViewController.swift in Sources */,
 				11EA4664204AFA18009F84B3 /* AppDelegate.swift in Sources */,
+				11F9F5E7204C5DC200D27635 /* Place+CoreDataClass.swift in Sources */,
 				11EA4691204B0F11009F84B3 /* ARGServices.swift in Sources */,
+				11F9F5BD204C4ADB00D27635 /* ARGCoreDataManager.swift in Sources */,
 				11EA468F204B0EF0009F84B3 /* ARGSearchHandler.swift in Sources */,
 				11EA4693204B0F1F009F84B3 /* ARGEnvironment.swift in Sources */,
 				11F9F5B5204BA72700D27635 /* ARGMapViewController.swift in Sources */,
 				11F9F5B7204BB44000D27635 /* ARGPinAnnotation.swift in Sources */,
+				11F9F5E8204C5DC200D27635 /* Place+CoreDataProperties.swift in Sources */,
 				11EA466C204AFA18009F84B3 /* SearchPlaces.xcdatamodeld in Sources */,
 				11EA469E204B4C3E009F84B3 /* ARGSearchResultsDataSource.swift in Sources */,
 				11EA469A204B3764009F84B3 /* ARGAlertable.swift in Sources */,

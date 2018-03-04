@@ -16,10 +16,10 @@ struct ARGLocationsDataSource {
         return selectedLocation == nil
     }
     
-    func isSelected(placeId: String) -> Bool {
+    func isSelected(placeID: String) -> Bool {
         if !showAllLocation,
             let selectedLocation = selectedLocation {
-            if selectedLocation.place_id == placeId {
+            if selectedLocation.place_id == placeID {
                 return true
             }
         }
