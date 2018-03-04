@@ -17,7 +17,7 @@ class ARGSearchViewController: UITableViewController, ARGAlertable, ARGActivityI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.setNavigationBarHidden(true, animated: false)
         tableView.tableFooterView = UIView()
         tableView.register(ARGBasicCell.self, forCellReuseIdentifier: ARGBasicCell.reuseIdentifier)
     }
@@ -26,12 +26,12 @@ class ARGSearchViewController: UITableViewController, ARGAlertable, ARGActivityI
 extension ARGSearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        let result = searchHandler.search(text: searchBar.text) { data, error in
-            self.hideIndicator()
+        let result = searchHandler.search(text: searchBar.text) { [weak self] data, error in
+            self?.hideIndicator()
             if let error = error {
-                self.show(error: error)
+                self?.show(error: error)
             } else if let data = data {
-                self.parseRceived(response: data)
+                self?.parseRceived(response: data)
             } else {
                 print("unknown response")
             }
@@ -47,7 +47,6 @@ extension ARGSearchViewController: UISearchBarDelegate {
     func parseRceived(response: Data) {
         do {
             let searchResult = try JSONDecoder().decode(ARGSearchResponse.self, from: response)
-            print("results: \(searchResult.results)")
             datasource.searchText = searchBar.text ?? ""
             datasource.results = searchResult.results
             tableView.reloadData()
@@ -73,7 +72,7 @@ extension ARGSearchViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: ARGBasicCell.reuseIdentifier) as? ARGBasicCell {
             let title = datasource.titleFor(indexPath: indexPath)
-            cell.configure(withTitle: title)
+            cell.configure(withTitle: title, showAccessory: datasource.shouldDisplayAccessory)
             return cell
         }
         return UITableViewCell()

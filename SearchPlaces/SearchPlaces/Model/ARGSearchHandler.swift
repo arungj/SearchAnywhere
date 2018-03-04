@@ -20,7 +20,7 @@ class ARGSearchHandler: NSObject {
         
         // Cancel the search task if a new search is fired while the search is in progress.
         dataTask?.cancel()
-        let urlRequest = URLRequest(url: self.environment.serviceURL(forSearchText: searchText))
+        let urlRequest = URLRequest(url: environment.serviceURL(forSearchText: searchText))
         dataTask = service.send(request: urlRequest) { data, error in
             DispatchQueue.main.async {
                 if let err = error as NSError?,
@@ -36,4 +36,7 @@ class ARGSearchHandler: NSObject {
         return true
     }
     
+    deinit {
+        dataTask?.cancel()
+    }
 }

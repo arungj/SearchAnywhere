@@ -10,33 +10,19 @@ import UIKit
 
 class ARGBasicCell: UITableViewCell {
     static let reuseIdentifier = "basicCell"
-    // Add a single label to the cell for displaying the text.
-    private let displayText = UILabel()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        // Setting properties for the label.
-        displayText.numberOfLines = 2
-        displayText.font = UIFont.preferredFont(forTextStyle: .headline)
-        displayText.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(displayText)
-        
-        // Autolayout constraints for the label to pin - left, top, right & bottom.
-        // Left and right are pinned to the layout margin.
-        NSLayoutConstraint.activate([
-            displayText.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
-            displayText.topAnchor.constraint(equalTo: topAnchor),
-            displayText.trailingAnchor.constraint(equalTo: trailingAnchor),
-            displayText.bottomAnchor.constraint(equalTo: bottomAnchor)
-            ])
+        textLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
+        textLabel?.numberOfLines = 2
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(withTitle title: String) {
-        displayText.text = title
+    func configure(withTitle title: String, showAccessory: Bool) {
+        textLabel?.text = title
+        accessoryType = (showAccessory ? .disclosureIndicator : .none)
     }
 }
