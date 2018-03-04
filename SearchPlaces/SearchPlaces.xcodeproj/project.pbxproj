@@ -127,7 +127,6 @@
 				11EA468E204B0EF0009F84B3 /* ARGSearchHandler.swift */,
 				11EA4696204B2DE7009F84B3 /* ARGSearchResponse.swift */,
 				11EA469D204B4C3E009F84B3 /* ARGSearchResultsDatasource.swift */,
-				11EA4690204B0F11009F84B3 /* ARGServices.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -152,6 +151,7 @@
 		11EA4698204B3743009F84B3 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				11EA4690204B0F11009F84B3 /* ARGServices.swift */,
 				11EA4699204B3764009F84B3 /* ARGAlertable.swift */,
 				11EA469B204B378E009F84B3 /* ARGActivityIndicatorProtocol.swift */,
 			);

@@ -8,7 +8,9 @@
 
 import Foundation
 
-class ARGServices {
+protocol ARGServices { }
+
+extension ARGServices {
     func send(request: URLRequest, completion: @escaping (Data?, Error?) -> Void) -> URLSessionTask {
         
         // Using the default session which comes with default policies for caching, timeout etc.

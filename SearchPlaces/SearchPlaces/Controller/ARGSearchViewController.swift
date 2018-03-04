@@ -9,9 +9,9 @@
 import UIKit
 
 class ARGSearchViewController: UITableViewController, ARGAlertable, ARGActivityIndicatorProtocol {
-    var indicatorView: UIView?
     
     @IBOutlet weak var searchBar: UISearchBar!
+    weak var indicatorView: UIView?
     var searchHandler = ARGSearchHandler()
     var datasource = ARGSearchResultsDatasource()
     
@@ -35,9 +35,8 @@ class ARGSearchViewController: UITableViewController, ARGAlertable, ARGActivityI
 
 // MARK: - UISearchBarDelegate
 extension ARGSearchViewController: UISearchBarDelegate {
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        let result = searchHandler.search(text: searchBar.text) { [weak self] data, error in
+        let isSearching = searchHandler.search(text: searchBar.text) { [weak self] data, error in
             self?.hideIndicator()
             if let error = error {
                 self?.show(error: error)
@@ -47,7 +46,7 @@ extension ARGSearchViewController: UISearchBarDelegate {
                 print("unknown response")
             }
         }
-        if result {
+        if isSearching {
             showIndicator()
             view.endEditing(true)
         } else {
@@ -84,7 +83,7 @@ extension ARGSearchViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: ARGBasicCell.reuseIdentifier) as? ARGBasicCell {
             let title = datasource.titleFor(indexPath: indexPath)
-            cell.configure(withTitle: title, showAccessory: datasource.shouldDisplayAccessory)
+            cell.configure(withTitle: title, showAccessory: datasource.hasSearchResults)
             return cell
         }
         return UITableViewCell()
@@ -92,7 +91,8 @@ extension ARGSearchViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if let mapViewController = storyboard?.instantiateViewController(withIdentifier: ARGMapViewController.storyboardIdentifier) as? ARGMapViewController {
+        if datasource.hasSearchResults,
+            let mapViewController = storyboard?.instantiateViewController(withIdentifier: ARGMapViewController.storyboardIdentifier) as? ARGMapViewController {
             navigationController?.pushViewController(mapViewController, animated: true)
         }
     }

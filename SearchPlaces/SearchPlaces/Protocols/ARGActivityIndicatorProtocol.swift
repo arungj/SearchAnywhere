@@ -10,8 +10,6 @@ import UIKit
 
 protocol ARGActivityIndicatorProtocol: class {
     var indicatorView: UIView? { get set }
-    func showIndicator()
-    func hideIndicator()
 }
 
 extension ARGActivityIndicatorProtocol where Self: UIViewController {

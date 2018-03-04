@@ -8,9 +8,7 @@
 
 import Foundation
 
-class ARGSearchHandler: NSObject {
-    
-    lazy var service = ARGServices()
+class ARGSearchHandler: NSObject, ARGServices {
     lazy var environment = ARGEnvironment()
     weak var dataTask: URLSessionTask?
     
@@ -21,7 +19,7 @@ class ARGSearchHandler: NSObject {
         // Cancel the search task if a new search is fired while the search is in progress.
         dataTask?.cancel()
         let urlRequest = URLRequest(url: environment.serviceURL(forSearchText: searchText))
-        dataTask = service.send(request: urlRequest) { data, error in
+        dataTask = send(request: urlRequest) { data, error in
             DispatchQueue.main.async {
                 if let err = error as NSError?,
                     err.localizedDescription == "cancelled" {

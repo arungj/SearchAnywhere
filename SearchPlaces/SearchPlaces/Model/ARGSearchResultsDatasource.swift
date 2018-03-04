@@ -51,7 +51,7 @@ struct ARGSearchResultsDatasource {
         return 20
     }
     
-    var shouldDisplayAccessory: Bool {
+    var hasSearchResults: Bool {
         return results.count > 0
     }
 }

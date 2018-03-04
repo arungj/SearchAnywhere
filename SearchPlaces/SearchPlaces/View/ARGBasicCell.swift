@@ -13,7 +13,7 @@ class ARGBasicCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        textLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
+        textLabel?.font = .preferredFont(forTextStyle: .headline)
         textLabel?.numberOfLines = 2
     }
     
