@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -58,6 +59,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pul-A6-299" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="529" y="-50"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="Ldy-cJ-k3k">
+            <objects>
+                <viewController storyboardIdentifier="ARGMapViewController" id="uxW-Qq-LQg" customClass="ARGMapViewController" customModule="SearchPlaces" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PLD-G6-ivS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0yd-Ld-hcg">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0yd-Ld-hcg" firstAttribute="leading" secondItem="BGe-vN-zVl" secondAttribute="leading" id="A2d-Bw-RaK"/>
+                            <constraint firstItem="BGe-vN-zVl" firstAttribute="trailing" secondItem="0yd-Ld-hcg" secondAttribute="trailing" id="Sdv-4q-leU"/>
+                            <constraint firstItem="0yd-Ld-hcg" firstAttribute="top" secondItem="BGe-vN-zVl" secondAttribute="top" id="TTg-9p-bxJ"/>
+                            <constraint firstItem="BGe-vN-zVl" firstAttribute="bottom" secondItem="0yd-Ld-hcg" secondAttribute="bottom" id="f5F-ae-n4A"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BGe-vN-zVl"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="0yd-Ld-hcg" id="HSI-Q0-VLD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sEG-lY-HT2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1498" y="-50"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dv3-2u-h7y">

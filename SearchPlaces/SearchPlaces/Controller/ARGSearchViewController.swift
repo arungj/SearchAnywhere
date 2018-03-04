@@ -15,14 +15,25 @@ class ARGSearchViewController: UITableViewController, ARGAlertable, ARGActivityI
     var searchHandler = ARGSearchHandler()
     var datasource = ARGSearchResultsDatasource()
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.setNavigationBarHidden(true, animated: false)
         tableView.tableFooterView = UIView()
         tableView.register(ARGBasicCell.self, forCellReuseIdentifier: ARGBasicCell.reuseIdentifier)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 }
 
+// MARK: - UISearchBarDelegate
 extension ARGSearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -56,6 +67,7 @@ extension ARGSearchViewController: UISearchBarDelegate {
     }
 }
 
+// MARK: - UITableViewDelegate
 extension ARGSearchViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return datasource.numberOfSections
@@ -80,5 +92,8 @@ extension ARGSearchViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if let mapViewController = storyboard?.instantiateViewController(withIdentifier: ARGMapViewController.storyboardIdentifier) as? ARGMapViewController {
+            navigationController?.pushViewController(mapViewController, animated: true)
+        }
     }
 }

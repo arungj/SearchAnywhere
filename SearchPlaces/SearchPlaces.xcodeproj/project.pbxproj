@@ -22,6 +22,7 @@
 		11EA469A204B3764009F84B3 /* ARGAlertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA4699204B3764009F84B3 /* ARGAlertable.swift */; };
 		11EA469C204B378E009F84B3 /* ARGActivityIndicatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA469B204B378E009F84B3 /* ARGActivityIndicatorProtocol.swift */; };
 		11EA469E204B4C3E009F84B3 /* ARGSearchResultsDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA469D204B4C3E009F84B3 /* ARGSearchResultsDatasource.swift */; };
+		11F9F5B5204BA72700D27635 /* ARGMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F9F5B4204BA72700D27635 /* ARGMapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		11EA4699204B3764009F84B3 /* ARGAlertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGAlertable.swift; sourceTree = "<group>"; };
 		11EA469B204B378E009F84B3 /* ARGActivityIndicatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGActivityIndicatorProtocol.swift; sourceTree = "<group>"; };
 		11EA469D204B4C3E009F84B3 /* ARGSearchResultsDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGSearchResultsDatasource.swift; sourceTree = "<group>"; };
+		11F9F5B4204BA72700D27635 /* ARGMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				11EA4665204AFA18009F84B3 /* ARGSearchViewController.swift */,
+				11F9F5B4204BA72700D27635 /* ARGMapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				11EA4691204B0F11009F84B3 /* ARGServices.swift in Sources */,
 				11EA468F204B0EF0009F84B3 /* ARGSearchHandler.swift in Sources */,
 				11EA4693204B0F1F009F84B3 /* ARGEnvironment.swift in Sources */,
+				11F9F5B5204BA72700D27635 /* ARGMapViewController.swift in Sources */,
 				11EA466C204AFA18009F84B3 /* SearchPlaces.xcdatamodeld in Sources */,
 				11EA469E204B4C3E009F84B3 /* ARGSearchResultsDatasource.swift in Sources */,
 				11EA469A204B3764009F84B3 /* ARGAlertable.swift in Sources */,
