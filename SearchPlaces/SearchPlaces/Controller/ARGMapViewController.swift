@@ -16,6 +16,9 @@ enum ARGAnnotationMode {
     case selectedAnnotation // This mode specifies that a location is chosen by the user to see on the map. Save / delete option is enabled in this mode.
 }
 
+/**
+ This ViewController shows the map view and loads the annotations, provides save / delete option for places.
+ */
 class ARGMapViewController: UIViewController, ARGCoreDataProtocol {
     static let storyboardIdentifier = "ARGMapViewController"
     static let annotationViewIdentifier = "AnnotationView"

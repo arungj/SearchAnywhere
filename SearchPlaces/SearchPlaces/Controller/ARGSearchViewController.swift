@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ This ViewController allows to search for a place and lists the results in a TableView.
+ */
 class ARGSearchViewController: UITableViewController, ARGAlertable, ARGActivityIndicatorProtocol {
     
     @IBOutlet weak var searchBar: UISearchBar!
@@ -19,7 +22,6 @@ class ARGSearchViewController: UITableViewController, ARGAlertable, ARGActivityI
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
-        tableView.register(ARGBasicCell.self, forCellReuseIdentifier: ARGBasicCell.reuseIdentifier)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,16 +38,20 @@ class ARGSearchViewController: UITableViewController, ARGAlertable, ARGActivityI
 // MARK: - UISearchBarDelegate
 extension ARGSearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        // Calls the search method and wait for the search completion.
         let isSearching = searchHandler.search(text: searchBar.text) { [weak self] data, error in
             self?.hideIndicator()
+            // Handle the error in the response.
             if let error = error {
                 self?.show(error: error)
             } else if let data = data {
+                // Handle the data received from the search.
                 self?.parseRceived(response: data)
             } else {
                 print("unknown response")
             }
         }
+        // Show an activity indicator if the search is in progress and dismiss the keyboard.
         if isSearching {
             showIndicator()
             view.endEditing(true)
@@ -54,6 +60,7 @@ extension ARGSearchViewController: UISearchBarDelegate {
         }
     }
     
+    // Decode the received JSON and create the data source to populate the TableView.
     func parseRceived(response: Data) {
         do {
             let searchResult = try JSONDecoder().decode(ARGSearchResponse.self, from: response)
@@ -91,9 +98,12 @@ extension ARGSearchViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        // Show the map ViewController on selecting a valid search result.
         if datasource.hasSearchResults,
             let mapViewController = storyboard?.instantiateViewController(withIdentifier: ARGMapViewController.storyboardIdentifier) as? ARGMapViewController {
+            // Pass all the locations to the map view's data source.
             mapViewController.datasource.locationResults = datasource.results
+            // Set the selected location if the user selected a particular location.
             if datasource.isLocationAvailable(at: indexPath) {
                 mapViewController.datasource.selectedLocation = datasource.results[indexPath.row]
             }

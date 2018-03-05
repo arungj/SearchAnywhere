@@ -12,6 +12,7 @@ class ARGEnvironment {
     let serviceEndpoint = "https://maps.googleapis.com/maps/api/geocode/json?address="
     let apiKey = "AIzaSyB04cCisFvaUn-_ujcej4j4t4RjoMLt3Ss"
     
+    // Create the URL for the search text by appending the service and the API key.
     func serviceURL(forSearchText searchText: String) -> URL {
         // Replace spaces in the search text with plus symbol.
         let text = searchText.replacingOccurrences(of: " ", with: "+")

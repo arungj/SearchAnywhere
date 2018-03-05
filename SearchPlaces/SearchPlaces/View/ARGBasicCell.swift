@@ -11,14 +11,11 @@ import UIKit
 class ARGBasicCell: UITableViewCell {
     static let reuseIdentifier = "basicCell"
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        // Set bold font and number of lines to 2.
         textLabel?.font = .preferredFont(forTextStyle: .headline)
         textLabel?.numberOfLines = 2
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     func configure(withTitle title: String, showAccessory: Bool) {

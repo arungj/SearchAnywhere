@@ -13,6 +13,9 @@ protocol ARGActivityIndicatorProtocol: class {
 }
 
 extension ARGActivityIndicatorProtocol where Self: UIViewController {
+    /**
+     This method creates an activity indicator and adds it to the current ViewController.
+     */
     func showIndicator() {
         if indicatorView == nil {
             let canvasView = makeCanvasView()
@@ -38,6 +41,7 @@ extension ARGActivityIndicatorProtocol where Self: UIViewController {
         hideWithFade()
     }
     
+    // The canvas view to show a black background for the activity indicator.
     private func makeCanvasView() -> UIView {
         let view = UIView()
         view.backgroundColor = .darkGray
@@ -46,6 +50,7 @@ extension ARGActivityIndicatorProtocol where Self: UIViewController {
         return view
     }
     
+    // Animation block to show the activity indicator.
     private func showWithFade() {
         if let indicator = indicatorView {
             indicator.alpha = 0
@@ -58,6 +63,7 @@ extension ARGActivityIndicatorProtocol where Self: UIViewController {
         }
     }
     
+    // Animation block to hide the activity indicator.
     private func hideWithFade() {
         if let indicator = indicatorView {
             if let spinner = indicator.subviews.first as? UIActivityIndicatorView {

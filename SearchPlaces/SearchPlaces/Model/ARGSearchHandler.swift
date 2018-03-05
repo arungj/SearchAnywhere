@@ -12,6 +12,12 @@ class ARGSearchHandler: NSObject, ARGServices {
     lazy var environment = ARGEnvironment()
     weak var dataTask: URLSessionTask?
     
+    /**
+     This method takes a text to search and returns the results from the search API.
+     - parameter text: The search text. If the search text is invalid, it return false.
+     - parameter completion: The completion block with the response data or the error from the web service.
+     - returns: True if the search text is valid, false otherwise.
+     */
     func search(text: String?, completion: @escaping (Data?, Error?) -> Void) -> Bool {
         guard let searchText = text,
             searchText.count > 0 else { return false }

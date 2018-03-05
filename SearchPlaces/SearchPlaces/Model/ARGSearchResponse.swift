@@ -8,6 +8,10 @@
 
 import Foundation
 
+/**
+ This struct acts as the model for the JSON response.
+ It specifies only the keys that are required. All the other keys in the JSON response will be ignored.
+ */
 struct ARGSearchResponse: Codable {
     let results: [ARGLocationDetails]
 }
