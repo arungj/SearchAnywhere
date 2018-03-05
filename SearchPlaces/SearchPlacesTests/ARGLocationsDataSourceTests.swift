@@ -30,8 +30,8 @@ class ARGLocationsDataSourceTests: XCTestCase {
         let locationResults = locationsDataSource.locationResults
         XCTAssertNil(locationResults)
         
-        let showAllLocations = locationsDataSource.showAllLocation
-        XCTAssertTrue(showAllLocations)
+        let mapMode = locationsDataSource.mapMode
+        XCTAssertEqual(mapMode, .allAnnotations)
         
         let isSelected = locationsDataSource.isSelected(placeID: "abcd")
         XCTAssertFalse(isSelected)
@@ -42,7 +42,7 @@ class ARGLocationsDataSourceTests: XCTestCase {
         
         let locationDetails = ARGLocationDetails(formatted_address: "Apple",
                                                  geometry: ARGGeometry(location: ARGLocation(lat: 100, lng: 100)),
-                                                 place_id: "adfasfafafa")
+                                                 place_id: "171229-nE6KAx")
         locationsDataSource.locationResults = [locationDetails]
         let selectedLocation = locationsDataSource.selectedLocation
         XCTAssertNil(selectedLocation)
@@ -50,8 +50,8 @@ class ARGLocationsDataSourceTests: XCTestCase {
         let locationResults = locationsDataSource.locationResults
         XCTAssertNotNil(locationResults)
         
-        let showAllLocations = locationsDataSource.showAllLocation
-        XCTAssertTrue(showAllLocations)
+        let mapMode = locationsDataSource.mapMode
+        XCTAssertEqual(mapMode, .allAnnotations)
     }
     
     func testSelectedLocation() {
@@ -59,7 +59,7 @@ class ARGLocationsDataSourceTests: XCTestCase {
         
         let locationDetails = ARGLocationDetails(formatted_address: "Apple",
                                                  geometry: ARGGeometry(location: ARGLocation(lat: 100, lng: 100)),
-                                                 place_id: "adfasfafafa")
+                                                 place_id: "171229-nE6KAx")
         locationsDataSource.locationResults = [locationDetails]
         locationsDataSource.selectedLocation = locationDetails
         
@@ -69,13 +69,13 @@ class ARGLocationsDataSourceTests: XCTestCase {
         let locationResults = locationsDataSource.locationResults
         XCTAssertNotNil(locationResults)
         
-        let showAllLocations = locationsDataSource.showAllLocation
-        XCTAssertFalse(showAllLocations)
+        let mapMode = locationsDataSource.mapMode
+        XCTAssertEqual(mapMode, .selectedAnnotation)
         
-        var isSelected = locationsDataSource.isSelected(placeID: "adfasfafafa")
+        var isSelected = locationsDataSource.isSelected(placeID: "171229-nE6KAx")
         XCTAssertTrue(isSelected)
         
-        isSelected = locationsDataSource.isSelected(placeID: "abcdefg")
+        isSelected = locationsDataSource.isSelected(placeID: "nE6KAx")
         XCTAssertFalse(isSelected)
     }
 }

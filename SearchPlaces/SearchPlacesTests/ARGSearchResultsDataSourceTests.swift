@@ -71,7 +71,7 @@ class ARGSearchResultsDataSourceTests: XCTestCase {
     func testWithSingleSearchResult() {
         let locationDetails = ARGLocationDetails(formatted_address: "Apple",
                                                   geometry: ARGGeometry(location: ARGLocation(lat: 100, lng: 100)),
-                                                  place_id: "adfasfafafa")
+                                                  place_id: "171229-nE6KAx")
         searchResultsDataSource = ARGSearchResultsDataSource(searchText: "abc", results: [locationDetails])
         
         let numberOfSections = searchResultsDataSource.numberOfSections
@@ -99,10 +99,10 @@ class ARGSearchResultsDataSourceTests: XCTestCase {
     func testWithMultipleSearchResults() {
         let locationDetails1 = ARGLocationDetails(formatted_address: "Apple",
                                                   geometry: ARGGeometry(location: ARGLocation(lat: 100, lng: 100)),
-                                                  place_id: "adfasfafafa")
+                                                  place_id: "171229-nE6KAx")
         let locationDetails2 = ARGLocationDetails(formatted_address: "Google",
                                                   geometry: ARGGeometry(location: ARGLocation(lat: 100, lng: 100)),
-                                                  place_id: "qerqrqwrqr")
+                                                  place_id: "qgl1dl099n4l")
         searchResultsDataSource = ARGSearchResultsDataSource(searchText: "abc", results: [locationDetails1, locationDetails2])
         
         let numberOfRows = searchResultsDataSource.numberOfRows(inSection: 1)

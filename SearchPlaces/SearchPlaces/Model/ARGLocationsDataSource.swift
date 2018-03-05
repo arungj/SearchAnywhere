@@ -12,17 +12,29 @@ struct ARGLocationsDataSource {
     var locationResults: [ARGLocationDetails]!
     var selectedLocation: ARGLocationDetails?
     
-    var showAllLocation: Bool {
-        return selectedLocation == nil
+    var mapMode: ARGAnnotationMode {
+        if selectedLocation != nil {
+            return .selectedAnnotation
+        }
+        return .allAnnotations
     }
     
     func isSelected(placeID: String) -> Bool {
-        if !showAllLocation,
+        if mapMode == .selectedAnnotation,
             let selectedLocation = selectedLocation {
             if selectedLocation.place_id == placeID {
                 return true
             }
         }
         return false
+    }
+    
+    func location(fromPlaceID placeID: String) -> ARGLocationDetails? {
+        for location in locationResults {
+            if location.place_id == placeID {
+                return location
+            }
+        }
+        return nil
     }
 }

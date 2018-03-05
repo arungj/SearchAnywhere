@@ -21,9 +21,11 @@ class ARGSearchHandlerTests: XCTestCase {
         super.tearDown()
     }
     
+    // Test ARGSearchHandler by passing a empty search text.
     func testEmptySearchText() {
         let searchText = ""
         let isSearching = searchHandler.search(text: searchText) { _, _ in }
+        // Expected result
         XCTAssertFalse(isSearching)
     }
     
