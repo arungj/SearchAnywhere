@@ -21,53 +21,56 @@ class ARGSearchResultsDataSourceTests: XCTestCase {
         super.tearDown()
     }
     
+    // Test case when 'ARGSearchResultsDataSource' object is initialized with zero search results and no search text.
     func testWithNoSearch() {
         searchResultsDataSource = ARGSearchResultsDataSource()
         
         let numberOfRows = searchResultsDataSource.numberOfRows(inSection: 1)
-        XCTAssertEqual(numberOfRows, 0)
+        XCTAssertEqual(numberOfRows, 0, "The number of rows should be zero.")
         
         let numberOfSections = searchResultsDataSource.numberOfSections
-        XCTAssertEqual(numberOfSections, 0)
+        XCTAssertEqual(numberOfSections, 0, "The number of sections should be zero.")
         
         let hasSearchResults = searchResultsDataSource.hasSearchResults
-        XCTAssertFalse(hasSearchResults)
+        XCTAssertFalse(hasSearchResults, "The search results property should be false.")
         
         var isLocationAvailable = searchResultsDataSource.isLocationAvailable(at: IndexPath(row: 0, section: 0))
-        XCTAssertFalse(isLocationAvailable)
+        XCTAssertFalse(isLocationAvailable, "The location availability for the row 0 and section 0 should be false.")
         
         isLocationAvailable = searchResultsDataSource.isLocationAvailable(at: IndexPath(row: 0, section: 1))
-        XCTAssertFalse(isLocationAvailable)
+        XCTAssertFalse(isLocationAvailable, "The location availability for the row 0 and section 1 should be false.")
         
         let rowTitle = searchResultsDataSource.titleFor(indexPath: IndexPath(row: 0, section: 0))
-        XCTAssertEqual(rowTitle, searchResultsDataSource.noResults)
+        XCTAssertEqual(rowTitle, searchResultsDataSource.noResults, "The row title is wrong.")
     }
     
+    // Test case when 'ARGSearchResultsDataSource' object is initialized with zero search results and a valid search text.
     func testWithNoSearchResult() {
         searchResultsDataSource = ARGSearchResultsDataSource(searchText: "abc", results: [])
         
         let numberOfSections = searchResultsDataSource.numberOfSections
-        XCTAssertEqual(numberOfSections, 1)
+        XCTAssertEqual(numberOfSections, 1, "The number of sections should be equal to one.")
         
         var numberOfRows = searchResultsDataSource.numberOfRows(inSection: 0)
-        XCTAssertEqual(numberOfRows, 1)
+        XCTAssertEqual(numberOfRows, 1, "The number of rows should be one in section zero.")
         
         numberOfRows = searchResultsDataSource.numberOfRows(inSection: 1)
-        XCTAssertEqual(numberOfRows, 0)
+        XCTAssertEqual(numberOfRows, 0, "The number of rows should be zero in section one.")
         
         let hasSearchResults = searchResultsDataSource.hasSearchResults
-        XCTAssertFalse(hasSearchResults)
+        XCTAssertFalse(hasSearchResults, "The search results property should be false.")
         
         var isLocationAvailable = searchResultsDataSource.isLocationAvailable(at: IndexPath(row: 0, section: 0))
-        XCTAssertFalse(isLocationAvailable)
+        XCTAssertFalse(isLocationAvailable, "The location availability for the row 0 and section 0 should be false.")
         
         isLocationAvailable = searchResultsDataSource.isLocationAvailable(at: IndexPath(row: 0, section: 1))
-        XCTAssertFalse(isLocationAvailable)
+        XCTAssertFalse(isLocationAvailable, "The location availability for the row 0 and section 1 should be false.")
         
         let rowTitle = searchResultsDataSource.titleFor(indexPath: IndexPath(row: 0, section: 0))
-        XCTAssertEqual(rowTitle, searchResultsDataSource.noResults)
+        XCTAssertEqual(rowTitle, searchResultsDataSource.noResults, "The row title is wrong.")
     }
     
+    // Test case when 'ARGSearchResultsDataSource' object is initialized with a single search result and a valid search text.
     func testWithSingleSearchResult() {
         let locationDetails = ARGLocationDetails(formatted_address: "Apple",
                                                   geometry: ARGGeometry(location: ARGLocation(lat: 100, lng: 100)),
@@ -75,27 +78,28 @@ class ARGSearchResultsDataSourceTests: XCTestCase {
         searchResultsDataSource = ARGSearchResultsDataSource(searchText: "abc", results: [locationDetails])
         
         let numberOfSections = searchResultsDataSource.numberOfSections
-        XCTAssertEqual(numberOfSections, 1)
+        XCTAssertEqual(numberOfSections, 1, "The number of sections should be equal to one.")
         
         var numberOfRows = searchResultsDataSource.numberOfRows(inSection: 0)
-        XCTAssertEqual(numberOfRows, 1)
+        XCTAssertEqual(numberOfRows, 1, "The number of rows should be one in section zero.")
         
         numberOfRows = searchResultsDataSource.numberOfRows(inSection: 1)
-        XCTAssertEqual(numberOfRows, 0)
+        XCTAssertEqual(numberOfRows, 0, "The number of rows should be zero in section one.")
         
         let hasSearchResults = searchResultsDataSource.hasSearchResults
-        XCTAssertTrue(hasSearchResults)
+        XCTAssertTrue(hasSearchResults, "The search results property should be true.")
         
         var isLocationAvailable = searchResultsDataSource.isLocationAvailable(at: IndexPath(row: 0, section: 0))
-        XCTAssertTrue(isLocationAvailable)
+        XCTAssertTrue(isLocationAvailable, "The location availability for the row 0 and section 0 should be true.")
         
         isLocationAvailable = searchResultsDataSource.isLocationAvailable(at: IndexPath(row: 0, section: 1))
-        XCTAssertTrue(isLocationAvailable)
+        XCTAssertTrue(isLocationAvailable, "The location availability for the row 0 and section 1 should be true.")
         
         let rowTitle = searchResultsDataSource.titleFor(indexPath: IndexPath(row: 0, section: 0))
-        XCTAssertEqual(rowTitle, "Apple")
+        XCTAssertEqual(rowTitle, "Apple", "The row title should be 'Apple'.")
     }
     
+    // Test case when 'ARGSearchResultsDataSource' object is initialized with multiple search results and a valid search text.
     func testWithMultipleSearchResults() {
         let locationDetails1 = ARGLocationDetails(formatted_address: "Apple",
                                                   geometry: ARGGeometry(location: ARGLocation(lat: 100, lng: 100)),
@@ -106,27 +110,27 @@ class ARGSearchResultsDataSourceTests: XCTestCase {
         searchResultsDataSource = ARGSearchResultsDataSource(searchText: "abc", results: [locationDetails1, locationDetails2])
         
         let numberOfRows = searchResultsDataSource.numberOfRows(inSection: 1)
-        XCTAssertEqual(numberOfRows, 2)
+        XCTAssertEqual(numberOfRows, 2, "The number of rows should be two in section one.")
         
         let numberOfSections = searchResultsDataSource.numberOfSections
-        XCTAssertEqual(numberOfSections, 2)
+        XCTAssertEqual(numberOfSections, 2, "The number of sections should be equal to two.")
         
         let hasSearchResults = searchResultsDataSource.hasSearchResults
-        XCTAssert(hasSearchResults)
+        XCTAssertTrue(hasSearchResults, "The search results property should be true.")
         
         var isLocationAvailable = searchResultsDataSource.isLocationAvailable(at: IndexPath(row: 0, section: 1))
-        XCTAssertTrue(isLocationAvailable)
+        XCTAssertTrue(isLocationAvailable, "The location availability for the row 0 and section 1 should be true.")
         
         isLocationAvailable = searchResultsDataSource.isLocationAvailable(at: IndexPath(row: 0, section: 0))
-        XCTAssertFalse(isLocationAvailable)
+        XCTAssertFalse(isLocationAvailable, "The location availability for the row 0 and section 0 should be false.")
         
         let rowTitle = searchResultsDataSource.titleFor(indexPath: IndexPath(row: 0, section: 0))
-        XCTAssertEqual(rowTitle, searchResultsDataSource.displayAllOnMap)
+        XCTAssertEqual(rowTitle, searchResultsDataSource.displayAllOnMap, "The row title is wrong.")
         
         let firstRowTitle = searchResultsDataSource.titleFor(indexPath: IndexPath(row: 0, section: 1))
-        XCTAssertEqual(firstRowTitle, "Apple")
+        XCTAssertEqual(firstRowTitle, "Apple", "The row title should be 'Apple'.")
         
         let secondRowTitle = searchResultsDataSource.titleFor(indexPath: IndexPath(row: 1, section: 1))
-        XCTAssertEqual(secondRowTitle, "Google")
+        XCTAssertEqual(secondRowTitle, "Google", "The row title should be 'Google'.")
     }
 }

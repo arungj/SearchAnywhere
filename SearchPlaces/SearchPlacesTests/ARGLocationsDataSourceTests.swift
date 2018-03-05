@@ -21,22 +21,24 @@ class ARGLocationsDataSourceTests: XCTestCase {
         super.tearDown()
     }
     
+    // Test case when there are no location items in the array.
     func testNoLocation() {
         locationsDataSource = ARGLocationsDataSource()
-        
+
         let selectedLocation = locationsDataSource.selectedLocation
-        XCTAssertNil(selectedLocation)
+        XCTAssertNil(selectedLocation, "The selected location should be nil.")
         
         let locationResults = locationsDataSource.locationResults
-        XCTAssertNil(locationResults)
+        XCTAssertNil(locationResults, "The location results array should be nil.")
         
         let mapMode = locationsDataSource.mapMode
-        XCTAssertEqual(mapMode, .allAnnotations)
+        XCTAssertEqual(mapMode, .allAnnotations, "The map mode should be 'allAnnotations'")
         
         let isSelected = locationsDataSource.isSelected(placeID: "abcd")
-        XCTAssertFalse(isSelected)
+        XCTAssertFalse(isSelected, "The isSelected function should return false for unknown place ID.")
     }
     
+    // Test case when 'locationDetails' array is set and 'selectedLocation' is not set.
     func testShowAllLocation() {
         locationsDataSource = ARGLocationsDataSource()
         
@@ -45,15 +47,16 @@ class ARGLocationsDataSourceTests: XCTestCase {
                                                  place_id: "171229-nE6KAx")
         locationsDataSource.locationResults = [locationDetails]
         let selectedLocation = locationsDataSource.selectedLocation
-        XCTAssertNil(selectedLocation)
+        XCTAssertNil(selectedLocation, "The selected location should be nil.")
         
         let locationResults = locationsDataSource.locationResults
-        XCTAssertNotNil(locationResults)
+        XCTAssertNotNil(locationResults, "The location results array should not be nil.")
         
         let mapMode = locationsDataSource.mapMode
-        XCTAssertEqual(mapMode, .allAnnotations)
+        XCTAssertEqual(mapMode, .allAnnotations, "The map mode should be 'allAnnotations'")
     }
     
+    // Test case when both 'locationDetails' array and 'selectedLocation' are set.
     func testSelectedLocation() {
         locationsDataSource = ARGLocationsDataSource()
         
@@ -64,18 +67,18 @@ class ARGLocationsDataSourceTests: XCTestCase {
         locationsDataSource.selectedLocation = locationDetails
         
         let selectedLocation = locationsDataSource.selectedLocation
-        XCTAssertNotNil(selectedLocation)
+        XCTAssertNotNil(selectedLocation, "The selected location should be nil.")
         
         let locationResults = locationsDataSource.locationResults
-        XCTAssertNotNil(locationResults)
+        XCTAssertNotNil(locationResults, "The location results array should not be nil.")
         
         let mapMode = locationsDataSource.mapMode
-        XCTAssertEqual(mapMode, .selectedAnnotation)
+        XCTAssertEqual(mapMode, .selectedAnnotation, "The map mode should be 'selectedAnnotation'")
         
         var isSelected = locationsDataSource.isSelected(placeID: "171229-nE6KAx")
-        XCTAssertTrue(isSelected)
+        XCTAssertTrue(isSelected, "The isSelected function should return true for known place ID.")
         
         isSelected = locationsDataSource.isSelected(placeID: "nE6KAx")
-        XCTAssertFalse(isSelected)
+        XCTAssertFalse(isSelected, "The isSelected function should return false for unknown place ID.")
     }
 }

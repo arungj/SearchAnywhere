@@ -21,6 +21,7 @@ class ARGEnvironmentTests: XCTestCase {
         super.tearDown()
     }
     
+    // Test the 'serviceURL' method for a search text with single word.
     func testURLForSearch() {
         let searchText = "hello"
         let url = environmentManager.serviceURL(forSearchText: searchText)
@@ -28,6 +29,7 @@ class ARGEnvironmentTests: XCTestCase {
         XCTAssertEqual(url.absoluteString, expectedURL)
     }
     
+    // Test the 'serviceURL' method for a search text with spaces in it.
     func testURLForSearchWithSpaces() {
         let searchText = "hello world"
         let url = environmentManager.serviceURL(forSearchText: searchText)
