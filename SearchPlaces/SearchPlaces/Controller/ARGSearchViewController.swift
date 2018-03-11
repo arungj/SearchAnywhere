@@ -90,7 +90,7 @@ extension ARGSearchViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: ARGBasicCell.reuseIdentifier) as? ARGBasicCell {
             let title = datasource.titleFor(indexPath: indexPath)
-            cell.configure(withTitle: title, showAccessory: datasource.hasSearchResults)
+            cell.configure(withTitle: title, showAccessory: datasource.hasResults)
             return cell
         }
         return UITableViewCell()
@@ -99,12 +99,12 @@ extension ARGSearchViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         // Show the map ViewController on selecting a valid search result.
-        if datasource.hasSearchResults,
+        if datasource.hasResults,
             let mapViewController = storyboard?.instantiateViewController(withIdentifier: ARGMapViewController.storyboardIdentifier) as? ARGMapViewController {
             // Pass all the locations to the map view's data source.
             mapViewController.datasource.locationResults = datasource.results
             // Set the selected location if the user selected a particular location.
-            if datasource.isLocationAvailable(at: indexPath) {
+            if datasource.shouldDisplayDetails(for: indexPath) {
                 mapViewController.datasource.selectedLocation = datasource.results[indexPath.row]
             }
             navigationController?.pushViewController(mapViewController, animated: true)

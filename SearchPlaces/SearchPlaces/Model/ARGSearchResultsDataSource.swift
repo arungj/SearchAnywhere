@@ -58,13 +58,13 @@ struct ARGSearchResultsDataSource {
     }
     
     // Convenience computed property to check if there are any search results.
-    var hasSearchResults: Bool {
+    var hasResults: Bool {
         return !results.isEmpty
     }
     
     // Method to check if there is a valid location result is available for this row.
-    func isLocationAvailable(at indexPath: IndexPath) -> Bool {
-        if hasSearchResults {
+    func shouldDisplayDetails(for indexPath: IndexPath) -> Bool {
+        if hasResults {
             if indexPath.section == 0 && results.count > 1 {
                 return false
             }
