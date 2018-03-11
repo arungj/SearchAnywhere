@@ -59,7 +59,7 @@ struct ARGSearchResultsDataSource {
     
     // Convenience computed property to check if there are any search results.
     var hasSearchResults: Bool {
-        return results.count > 0
+        return !results.isEmpty
     }
     
     // Method to check if there is a valid location result is available for this row.

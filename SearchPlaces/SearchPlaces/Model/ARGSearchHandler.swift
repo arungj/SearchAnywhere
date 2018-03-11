@@ -19,8 +19,7 @@ class ARGSearchHandler: NSObject, ARGServices {
      - returns: True if the search text is valid, false otherwise.
      */
     func search(text: String?, completion: @escaping (Data?, Error?) -> Void) -> Bool {
-        guard let searchText = text,
-            searchText.count > 0 else { return false }
+        guard let searchText = text?.nonEmptyValue else { return false }
         
         // Cancel the search task if a new search is fired while a search is in progress.
         dataTask?.cancel()

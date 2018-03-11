@@ -41,7 +41,7 @@ class ARGMapViewController: UIViewController, ARGCoreDataProtocol {
      If the mode is 'all annotations', then show all annotations with animation. Else show only the selected annotation centered on the screen.
      */
     func showAnnotations() {
-        if mapView.annotations.count > 0 { return }
+        if !mapView.annotations.isEmpty { return }
         
         var annotations = [ARGPinAnnotation]()
         var annotationToHighlight: ARGPinAnnotation?

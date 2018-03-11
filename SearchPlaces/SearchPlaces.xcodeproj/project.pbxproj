@@ -10,6 +10,7 @@
 		116BC1ED204C92F300EF6412 /* ARGLocationsDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116BC1EC204C92F300EF6412 /* ARGLocationsDataSourceTests.swift */; };
 		116BC1EF204CA16600EF6412 /* ARGEnvironmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116BC1EE204CA16600EF6412 /* ARGEnvironmentTests.swift */; };
 		116BC1F1204CA2E900EF6412 /* ARGSearchHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116BC1F0204CA2E900EF6412 /* ARGSearchHandlerTests.swift */; };
+		118C2A452055D97A00EC8606 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118C2A442055D97A00EC8606 /* StringExtension.swift */; };
 		11B0575E204C819C00237CE0 /* ARGSearchResultsDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B0575D204C819C00237CE0 /* ARGSearchResultsDataSourceTests.swift */; };
 		11EA4664204AFA18009F84B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA4663204AFA18009F84B3 /* AppDelegate.swift */; };
 		11EA4666204AFA18009F84B3 /* ARGSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA4665204AFA18009F84B3 /* ARGSearchViewController.swift */; };
@@ -49,6 +50,7 @@
 		116BC1EC204C92F300EF6412 /* ARGLocationsDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGLocationsDataSourceTests.swift; sourceTree = "<group>"; };
 		116BC1EE204CA16600EF6412 /* ARGEnvironmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGEnvironmentTests.swift; sourceTree = "<group>"; };
 		116BC1F0204CA2E900EF6412 /* ARGSearchHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGSearchHandlerTests.swift; sourceTree = "<group>"; };
+		118C2A442055D97A00EC8606 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		11B0575D204C819C00237CE0 /* ARGSearchResultsDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGSearchResultsDataSourceTests.swift; sourceTree = "<group>"; };
 		11EA4660204AFA18009F84B3 /* SearchPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11EA4663204AFA18009F84B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		118C2A432055D96100EC8606 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				118C2A442055D97A00EC8606 /* StringExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		11EA4657204AFA18009F84B3 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +131,7 @@
 				11EA4687204AFBCC009F84B3 /* View */,
 				11EA4686204AFBC4009F84B3 /* Model */,
 				11EA4698204B3743009F84B3 /* Protocols */,
+				118C2A432055D96100EC8606 /* Extensions */,
 				11EA4663204AFA18009F84B3 /* AppDelegate.swift */,
 				11EA4667204AFA18009F84B3 /* Main.storyboard */,
 				11EA466D204AFA18009F84B3 /* Assets.xcassets */,
@@ -325,6 +336,7 @@
 				11F9F5E8204C5DC200D27635 /* Place+CoreDataProperties.swift in Sources */,
 				11EA466C204AFA18009F84B3 /* SearchPlaces.xcdatamodeld in Sources */,
 				11EA469E204B4C3E009F84B3 /* ARGSearchResultsDataSource.swift in Sources */,
+				118C2A452055D97A00EC8606 /* StringExtension.swift in Sources */,
 				11EA469A204B3764009F84B3 /* ARGAlertable.swift in Sources */,
 				11F9F5BB204BCCD300D27635 /* ARGLocationsDataSource.swift in Sources */,
 			);
