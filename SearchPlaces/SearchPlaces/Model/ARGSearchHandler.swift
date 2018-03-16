@@ -19,11 +19,12 @@ class ARGSearchHandler: NSObject, ARGServices {
      - returns: True if the search text is valid, false otherwise.
      */
     func search(text: String?, completion: @escaping (Data?, Error?) -> Void) -> Bool {
-        guard let searchText = text?.nonEmptyValue else { return false }
+        guard let searchText = text?.nonEmptyValue,
+        let searchURL = environment.serviceURL(forSearchText: searchText) else { return false }
         
         // Cancel the search task if a new search is fired while a search is in progress.
         dataTask?.cancel()
-        let urlRequest = URLRequest(url: environment.serviceURL(forSearchText: searchText))
+        let urlRequest = URLRequest(url: searchURL)
         dataTask = send(request: urlRequest) { data, error in
             DispatchQueue.main.async {
                 if let err = error as NSError?,

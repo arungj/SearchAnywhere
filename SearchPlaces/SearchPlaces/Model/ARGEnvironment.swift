@@ -13,13 +13,13 @@ class ARGEnvironment {
     let apiKey = "AIzaSyB04cCisFvaUn-_ujcej4j4t4RjoMLt3Ss"
     
     // Create the URL for the search text by appending the service and the API key.
-    func serviceURL(forSearchText searchText: String) -> URL {
+    func serviceURL(forSearchText searchText: String) -> URL? {
         // Replace spaces in the search text with plus symbol.
         let text = searchText.replacingOccurrences(of: " ", with: "+")
         
         // Construct the URL by appending the search text and API key.
         let urlText = "\(serviceEndpoint)\(text)&key=\(apiKey)"
         
-        return URL(string: urlText)!
+        return URL(string: urlText)
     }
 }

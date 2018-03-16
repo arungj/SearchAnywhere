@@ -31,13 +31,13 @@ class ARGSearchResultsDataSourceTests: XCTestCase {
         let numberOfSections = searchResultsDataSource.numberOfSections
         XCTAssertEqual(numberOfSections, 0, "The number of sections should be zero.")
         
-        let hasSearchResults = searchResultsDataSource.hasSearchResults
+        let hasSearchResults = searchResultsDataSource.hasResults
         XCTAssertFalse(hasSearchResults, "The search results property should be false.")
         
-        var isLocationAvailable = searchResultsDataSource.isLocationAvailable(at: IndexPath(row: 0, section: 0))
+        var isLocationAvailable = searchResultsDataSource.shouldDisplayDetails(for: IndexPath(row: 0, section: 0))
         XCTAssertFalse(isLocationAvailable, "The location availability for the row 0 and section 0 should be false.")
         
-        isLocationAvailable = searchResultsDataSource.isLocationAvailable(at: IndexPath(row: 0, section: 1))
+        isLocationAvailable = searchResultsDataSource.shouldDisplayDetails(for: IndexPath(row: 0, section: 1))
         XCTAssertFalse(isLocationAvailable, "The location availability for the row 0 and section 1 should be false.")
         
         let rowTitle = searchResultsDataSource.titleFor(indexPath: IndexPath(row: 0, section: 0))
@@ -57,13 +57,12 @@ class ARGSearchResultsDataSourceTests: XCTestCase {
         numberOfRows = searchResultsDataSource.numberOfRows(inSection: 1)
         XCTAssertEqual(numberOfRows, 0, "The number of rows should be zero in section one.")
         
-        let hasSearchResults = searchResultsDataSource.hasSearchResults
+        let hasSearchResults = searchResultsDataSource.hasResults
         XCTAssertFalse(hasSearchResults, "The search results property should be false.")
-        
-        var isLocationAvailable = searchResultsDataSource.isLocationAvailable(at: IndexPath(row: 0, section: 0))
+        var isLocationAvailable = searchResultsDataSource.shouldDisplayDetails(for: IndexPath(row: 0, section: 0))
         XCTAssertFalse(isLocationAvailable, "The location availability for the row 0 and section 0 should be false.")
         
-        isLocationAvailable = searchResultsDataSource.isLocationAvailable(at: IndexPath(row: 0, section: 1))
+        isLocationAvailable = searchResultsDataSource.shouldDisplayDetails(for: IndexPath(row: 0, section: 1))
         XCTAssertFalse(isLocationAvailable, "The location availability for the row 0 and section 1 should be false.")
         
         let rowTitle = searchResultsDataSource.titleFor(indexPath: IndexPath(row: 0, section: 0))
@@ -86,13 +85,13 @@ class ARGSearchResultsDataSourceTests: XCTestCase {
         numberOfRows = searchResultsDataSource.numberOfRows(inSection: 1)
         XCTAssertEqual(numberOfRows, 0, "The number of rows should be zero in section one.")
         
-        let hasSearchResults = searchResultsDataSource.hasSearchResults
+        let hasSearchResults = searchResultsDataSource.hasResults
         XCTAssertTrue(hasSearchResults, "The search results property should be true.")
         
-        var isLocationAvailable = searchResultsDataSource.isLocationAvailable(at: IndexPath(row: 0, section: 0))
+        var isLocationAvailable = searchResultsDataSource.shouldDisplayDetails(for: IndexPath(row: 0, section: 0))
         XCTAssertTrue(isLocationAvailable, "The location availability for the row 0 and section 0 should be true.")
         
-        isLocationAvailable = searchResultsDataSource.isLocationAvailable(at: IndexPath(row: 0, section: 1))
+        isLocationAvailable = searchResultsDataSource.shouldDisplayDetails(for: IndexPath(row: 0, section: 1))
         XCTAssertTrue(isLocationAvailable, "The location availability for the row 0 and section 1 should be true.")
         
         let rowTitle = searchResultsDataSource.titleFor(indexPath: IndexPath(row: 0, section: 0))
@@ -115,13 +114,13 @@ class ARGSearchResultsDataSourceTests: XCTestCase {
         let numberOfSections = searchResultsDataSource.numberOfSections
         XCTAssertEqual(numberOfSections, 2, "The number of sections should be equal to two.")
         
-        let hasSearchResults = searchResultsDataSource.hasSearchResults
+        let hasSearchResults = searchResultsDataSource.hasResults
         XCTAssertTrue(hasSearchResults, "The search results property should be true.")
         
-        var isLocationAvailable = searchResultsDataSource.isLocationAvailable(at: IndexPath(row: 0, section: 1))
+        var isLocationAvailable = searchResultsDataSource.shouldDisplayDetails(for: IndexPath(row: 0, section: 1))
         XCTAssertTrue(isLocationAvailable, "The location availability for the row 0 and section 1 should be true.")
         
-        isLocationAvailable = searchResultsDataSource.isLocationAvailable(at: IndexPath(row: 0, section: 0))
+        isLocationAvailable = searchResultsDataSource.shouldDisplayDetails(for: IndexPath(row: 0, section: 0))
         XCTAssertFalse(isLocationAvailable, "The location availability for the row 0 and section 0 should be false.")
         
         let rowTitle = searchResultsDataSource.titleFor(indexPath: IndexPath(row: 0, section: 0))
