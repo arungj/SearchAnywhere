@@ -14,6 +14,15 @@ import MapKit
 enum ARGAnnotationMode {
     case allAnnotations     // Specifies that all annotations will be shown on the map.
     case selectedAnnotation // This mode specifies that a location is chosen by the user to see on the map. Save / delete option is enabled in this mode.
+    
+    var displayTitle: String {
+        switch self {
+        case .allAnnotations:
+            return "All Results"
+        case .selectedAnnotation:
+            return "Selected Location"
+        }
+    }
 }
 
 /**
@@ -28,7 +37,7 @@ class ARGMapViewController: UIViewController, ARGCoreDataProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "All Results"
+        title = datasource.mapMode.displayTitle
     }
     
     override func viewDidAppear(_ animated: Bool) {

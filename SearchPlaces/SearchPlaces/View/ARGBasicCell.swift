@@ -13,6 +13,7 @@ class ARGBasicCell: UITableViewCell {
     let displayLabel = UILabel()
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        separatorInset = .zero
         configureDisplayLabel()
     }
     
@@ -22,12 +23,12 @@ class ARGBasicCell: UITableViewCell {
         displayLabel.textColor = .darkBlue
         displayLabel.numberOfLines = 2
         displayLabel.translatesAutoresizingMaskIntoConstraints = false
-        let padding: CGFloat = 10
+        let bottomPadding: CGFloat = 15
         
         NSLayoutConstraint.activate([
             displayLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
-            displayLabel.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor, constant: padding),
-            displayLabel.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor, constant: -padding),
+            displayLabel.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor),
+            displayLabel.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor, constant: -bottomPadding),
             displayLabel.rightAnchor.constraint(equalTo: contentView.layoutMarginsGuide.rightAnchor)
             ])
     }

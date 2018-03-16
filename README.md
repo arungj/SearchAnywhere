@@ -49,3 +49,28 @@ The app allows users to make searches for locations and present the results in a
 4. View the map in different map types like satellite and hybrid.
 5. If the location name is too long, the callout is clipped, it can be adjusted to show completely on the screen.
 
+### Screenshots:
+
+**All results**
+
+![All results](https://github.com/arungj/SearchAnywhere/blob/master/screenshots/1%20All%20results.png)
+
+**All results on map**
+
+![All results](https://github.com/arungj/SearchAnywhere/blob/master/screenshots/2%20All%20results%20on%20map.png)
+
+**No result**
+
+![All results](https://github.com/arungj/SearchAnywhere/blob/master/screenshots/3%20no%20result.png)
+
+**Selected result, save button**
+
+![All results](https://github.com/arungj/SearchAnywhere/blob/master/screenshots/4%20Selected%20result%2C%20save%20button.png)
+
+**Landscape map**
+
+![All results](https://github.com/arungj/SearchAnywhere/blob/master/screenshots/5%20landscape%20map.png)
+
+**Delete location button**
+
+![All results](https://github.com/arungj/SearchAnywhere/blob/master/screenshots/6%20delete%20button.png)
