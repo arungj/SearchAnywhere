@@ -26,7 +26,7 @@ class ARGEnvironmentTests: XCTestCase {
         let searchText = "hello"
         let url = environmentManager.serviceURL(forSearchText: searchText)
         let expectedURL = "https://maps.googleapis.com/maps/api/geocode/json?address=hello&key=AIzaSyB04cCisFvaUn-_ujcej4j4t4RjoMLt3Ss"
-        XCTAssertEqual(url.absoluteString, expectedURL)
+        XCTAssertEqual(url?.absoluteString, expectedURL)
     }
     
     // Test the 'serviceURL' method for a search text with spaces in it.
@@ -34,6 +34,6 @@ class ARGEnvironmentTests: XCTestCase {
         let searchText = "hello world"
         let url = environmentManager.serviceURL(forSearchText: searchText)
         let expectedURL = "https://maps.googleapis.com/maps/api/geocode/json?address=hello+world&key=AIzaSyB04cCisFvaUn-_ujcej4j4t4RjoMLt3Ss"
-        XCTAssertEqual(url.absoluteString, expectedURL)
+        XCTAssertEqual(url?.absoluteString, expectedURL)
     }
 }

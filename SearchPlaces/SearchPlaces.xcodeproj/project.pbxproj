@@ -12,6 +12,7 @@
 		116BC1F1204CA2E900EF6412 /* ARGSearchHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116BC1F0204CA2E900EF6412 /* ARGSearchHandlerTests.swift */; };
 		118C2A452055D97A00EC8606 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118C2A442055D97A00EC8606 /* StringExtension.swift */; };
 		11B0575E204C819C00237CE0 /* ARGSearchResultsDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B0575D204C819C00237CE0 /* ARGSearchResultsDataSourceTests.swift */; };
+		11D4076F205C15F5002DB82E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D4076E205C15F5002DB82E /* UIColorExtension.swift */; };
 		11EA4664204AFA18009F84B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA4663204AFA18009F84B3 /* AppDelegate.swift */; };
 		11EA4666204AFA18009F84B3 /* ARGSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EA4665204AFA18009F84B3 /* ARGSearchViewController.swift */; };
 		11EA4669204AFA18009F84B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11EA4667204AFA18009F84B3 /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		116BC1F0204CA2E900EF6412 /* ARGSearchHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGSearchHandlerTests.swift; sourceTree = "<group>"; };
 		118C2A442055D97A00EC8606 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		11B0575D204C819C00237CE0 /* ARGSearchResultsDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGSearchResultsDataSourceTests.swift; sourceTree = "<group>"; };
+		11D4076E205C15F5002DB82E /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		11EA4660204AFA18009F84B3 /* SearchPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11EA4663204AFA18009F84B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11EA4665204AFA18009F84B3 /* ARGSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARGSearchViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				118C2A442055D97A00EC8606 /* StringExtension.swift */,
+				11D4076E205C15F5002DB82E /* UIColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				11EA4666204AFA18009F84B3 /* ARGSearchViewController.swift in Sources */,
 				11EA4664204AFA18009F84B3 /* AppDelegate.swift in Sources */,
 				11F9F5E7204C5DC200D27635 /* Place+CoreDataClass.swift in Sources */,
+				11D4076F205C15F5002DB82E /* UIColorExtension.swift in Sources */,
 				11EA4691204B0F11009F84B3 /* ARGServices.swift in Sources */,
 				11F9F5BD204C4ADB00D27635 /* ARGCoreDataManager.swift in Sources */,
 				11EA468F204B0EF0009F84B3 /* ARGSearchHandler.swift in Sources */,

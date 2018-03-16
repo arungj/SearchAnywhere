@@ -16,13 +16,17 @@ struct ARGSearchResultsDataSource {
     
     // The number of sections to be shown for the current array of search results.
     var numberOfSections: Int {
-        if searchText.count == 0 {
+        if searchText.isEmpty {
             return 0
         } else if results.count < 2 {
             return 1
         } else {
             return 2
         }
+    }
+    
+    var shouldScroll: Bool {
+        return !results.isEmpty
     }
     
     // The number of rows to be shown for the current section.
@@ -39,7 +43,7 @@ struct ARGSearchResultsDataSource {
     // Title to be shown for the current row in the TableView.
     func titleFor(indexPath: IndexPath) -> String {
         if indexPath.section == 0 {
-            if results.count == 0 {
+            if results.isEmpty {
                 return noResults
             } else if results.count > 1 {
                 return displayAllOnMap
@@ -51,9 +55,6 @@ struct ARGSearchResultsDataSource {
     
     // The height of the TableView section.
     func height(forSection section: Int) -> Float {
-        if section == 0 {
-            return 50
-        }
         return 20
     }
     

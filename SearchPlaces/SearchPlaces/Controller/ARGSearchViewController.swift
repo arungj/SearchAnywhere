@@ -15,29 +15,56 @@ class ARGSearchViewController: UITableViewController, ARGAlertable, ARGActivityI
     
     @IBOutlet weak var searchBar: UISearchBar!
     weak var indicatorView: UIView?
+    weak var welcomeMessage: UILabel?
+    
     var searchHandler = ARGSearchHandler()
     var datasource = ARGSearchResultsDataSource()
+    var textTintColor: UIColor?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
+    }
+    
+    func configureUI() {
+        title = "Search Places"
+        textTintColor = .darkBlue
+        
+        tableView.register(ARGBasicCell.self, forCellReuseIdentifier: ARGBasicCell.reuseIdentifier)
         tableView.tableFooterView = UIView()
+        searchBar.tintColor = textTintColor
+        refreshScroll()
+        showWelcomeMessage()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: true)
+    func refreshScroll() {
+        tableView.isScrollEnabled = datasource.shouldScroll
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: true)
+    func showWelcomeMessage() {
+        let messageLabel = UILabel()
+        messageLabel.font = UIFont.systemFont(ofSize: 30, weight: .regular)
+        messageLabel.text = "Welcome!!"
+        messageLabel.textColor = textTintColor
+        view.addSubview(messageLabel)
+        messageLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            messageLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            messageLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            ])
+        self.welcomeMessage = messageLabel
+    }
+    
+    func removeWelcomeMessage() {
+        welcomeMessage?.removeFromSuperview()
     }
 }
 
 // MARK: - UISearchBarDelegate
 extension ARGSearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        removeWelcomeMessage()
         // Calls the search method and wait for the search completion.
         let isSearching = searchHandler.search(text: searchBar.text) { [weak self] data, error in
             self?.hideIndicator()
@@ -60,6 +87,10 @@ extension ARGSearchViewController: UISearchBarDelegate {
         }
     }
     
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
+    
     // Decode the received JSON and create the data source to populate the TableView.
     func parseRceived(response: Data) {
         do {
@@ -67,6 +98,7 @@ extension ARGSearchViewController: UISearchBarDelegate {
             datasource.searchText = searchBar.text ?? ""
             datasource.results = searchResult.results
             tableView.reloadData()
+            refreshScroll()
         } catch {
             print("parsing error: \(error)")
         }
